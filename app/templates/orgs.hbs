@@ -1,8 +1,13 @@
 <H1>My Favourite Orgs</H1>
+  <ul>
+    {{#each content as |org|}}
+    <li>
+      <span {{action 'favoriteClicked' org}}>
+        [favorites ]
+      </span>
+      {{link-to org.id 'org' org.id }}
+    </li>
+    {{/each}}
+  </ul>
 
-
-<ul>
-<li>{{link-to 'JQuery' 'org.repos' 'jquery'}}</li>
-<li>{{link-to 'Ember' 'org.repos' 'emberjs'}}</li>
-<li>{{link-to 'Netflix' 'org.repos' 'netflix'}}</li>
-</ul>
+{{outlet}}

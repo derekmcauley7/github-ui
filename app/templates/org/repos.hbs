@@ -1,9 +1,6 @@
-
 <ul>
-<li>{{link-to 'react' 'org.repo.issues' 'react'}}</li>
-<li>{{link-to 'react' 'org.repo.issues' 'react'}}</li>
-<li>{{link-to 'react' 'org.repo.issues' 'react'}}</li>
+{{#each content as |repo|}}
+<li>{{link-to repo.name 'org.repo.issues' repo.name}}</li>
+{{/each}}
 </ul>
-
-
 {{outlet}}

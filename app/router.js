@@ -7,14 +7,21 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  // list of orgs
   this.route('orgs', {});  //  /orgs
+
+  //individual orgs
    this.route('org', { path: 'org/:id' }, function() { // org/emberjs
+
+    //list of repos
     this.route('repos', {});
+    // individual repos
     this.route('repo', { path: ':repoid'}, function() {
       this.route('contributors', {});
       this.route('issues', {});
     });
   });
+   this.route('notfound', {path:'*path'})
 });
 
 export default Router;
